@@ -3,60 +3,643 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Droid Technologies • Support Made Simple</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Blue Droid Technologies | Technology Support Made Simple</title>
+    <meta name="description" content="Local Milford tech support for residential and small business. Over 20 years experience. Personal, patient service.">
     <style>
-        :root {
-            --blue:        #007BFF;
-            --blue-dark:   #0056CC;
-            --teal:        #14B8A6;
-            --bg:          #FAFBFC;
-            --text:        #1F2937;
-            --gray:        #6B7280;
-            --white:       #FFFFFF;
-        }
-        *, *::before, *::after { box-sizing: border-box; }
-        body {
+        * {
             margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4169E1;
+            --light-blue: #E8F2FF;
+            --charcoal: #2C3E50;
+            --soft-gray: #F7F9FC;
+            --success-green: #10B981;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
+            color: var(--charcoal);
         }
-        h1, h2, h3 { font-family: 'Exo 2', sans-serif; font-weight: 700; margin: 0; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 60px;
-            background: linear-gradient(135deg, #E3F2FF 0%, var(--bg) 100%);
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .logo { max-width: 380px; width: 90%; height: auto; margin-bottom: 20px; }
-        .tagline { font-size: 2.2rem; color: var(--blue); margin: 10px 0 30px; }
-        .btn {
-            display: inline-block;
-            background: var(--blue);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: 600;
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            transition: background 0.3s;
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        .btn:hover { background: var(--teal); }
 
-        /* Services */
-        .services { padding: 80px 0; background: var(--white); }
-        .grid {
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .phone-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #5B7FE8 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Trust Indicators */
+        .trust-section {
+            background: var(--soft-gray);
+            padding: 3rem 2rem;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .service-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 2rem;
         }
-        .card {
+
+        .service-card {
             background: var(--white);
+            border: 2px solid var(--soft-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--soft-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            background: var(--light-blue);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--soft-gray);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Blog Page Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border: 2px solid var(--soft-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            background: var(--light-blue);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        /* Page-specific styles */
+        .page-hero {
+            background: var(--soft-gray);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <img src="https://bluedroidtech.com/wp-content/uploads/2023/05/BDTv3-Landscape-Transparent-1500x450-1.png" alt="Blue Droid Technologies" class="logo">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:5132126714" class="phone-btn">📞 (513) 212-6714</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Technology Support Made Simple</h1>
+        <p>Your local Milford tech expert with over 20 years experience</p>
+        <a href="#contact" class="cta-button">Get Help Today</a>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">🏠</div>
+                <h3>Locally Owned & Operated</h3>
+                <p>Proudly serving Milford & surrounding communities</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">⭐</div>
+                <h3>20+ Years Experience</h3>
+                <p>Trusted expertise you can count on</p>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💙</div>
+                <h3>Personal Service</h3>
+                <p>Patient, friendly support without the jargon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">How Can I Help You?</h2>
+            <p class="section-subtitle">Whether you're at home or running a business, I'm here to make technology work for you</p>
+
+            <!-- Residential Services -->
+            <div class="service-category">
+                <h3 class="category-title">Residential Services</h3>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>PC & Laptop Repair</h3>
+                        <p>Computer running slow or acting up? I'll get it back to peak performance.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📶</div>
+                        <h3>WiFi Setup</h3>
+                        <p>Upgrading or expanding your WiFi? I'll ensure full coverage throughout your home.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏡</div>
+                        <h3>Smart Home Setup</h3>
+                        <p>Need help with smart speakers, displays, or home automation? I've got you covered.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>Smartphone & Tablet Help</h3>
+                        <p>New device setup, data migration, or just learning the features—I can help.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🖥️</div>
+                        <h3>Home Office Setup</h3>
+                        <p>Working from home? Let me help you create a productive, organized workspace.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">♻️</div>
+                        <h3>Electronics Recycling</h3>
+                        <p>Responsibly dispose of old equipment with secure data wiping or destruction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Services -->
+            <div class="service-category">
+                <h3 class="category-title">Small Business Services</h3>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>IT Support</h3>
+                        <p>Onsite or remote support to keep your business technology running smoothly.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3>Network Setup & Management</h3>
+                        <p>Reliable network infrastructure tailored to your business needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Security Solutions</h3>
+                        <p>Protect your business data with proper security measures and best practices.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Device Management</h3>
+                        <p>Keep your business computers, phones, and tablets organized and up-to-date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Blue Droid Technologies</h2>
+                    <p>Hi, I'm your local tech expert here in Milford, OH. With over 20 years of experience in technology support, I started Blue Droid Technologies to provide the kind of personal, patient service that's missing from big box stores.</p>
+                    <p>I believe technology should make your life easier, not more complicated. Whether you need help with a simple question or a complex setup, I'm here to help—in plain English, without the jargon.</p>
+                    <p>When you work with me, you're supporting a local business and getting someone who genuinely cares about solving your problem. No upselling, no pressure—just honest, reliable service.</p>
+                    <p><strong>First responders, veterans, and teachers:</strong> Ask me about special discounts. Thank you for your service!</p>
+                </div>
+                <div class="about-image">
+                    🤖
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to get started? I'm just a phone call or email away.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h3>📞 Call or Text</h3>
+                    <a href="tel:5132126714">(513) 212-6714</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:support@bluedroidtech.com">support@bluedroidtech.com</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p>Milford, OH<br>& Surrounding Areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Blue Droid Technologies</h4>
+                <p>Technology Support Made Simple</p>
+                <p>Milford, OH</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Residential Support</a></li>
+                    <li><a href="#services">Business IT Services</a></li>
+                    <li><a href="#services">Electronics Recycling</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5132126714">(513) 212-6714</a></li>
+                    <li><a href="mailto:support@bluedroidtech.com">support@bluedroidtech.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy            background: var(--white);
             padding: 40px 24px;
             border-radius: 16px;
             text-align: center;
@@ -148,7 +731,4 @@
 
     <footer>
         <img src="https://i.imgur.com/9bFZeYp.png" alt="Blue Droid Logo">
-        <p>© 2025 Blue Droid Technologies • Milford, OH • Support Made Simple</p>
-    </footer>
-</body>
-</html>
+        <p>© 2025 Blue Droid Technologies • Milford, OH • Su
