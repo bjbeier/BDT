@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Droid Technologies • Support Made Simple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue:        #007BFF;
+            --blue-dark:   #0056CC;
+            --teal:        #14B8A6;
+            --bg:          #FAFBFC;
+            --text:        #1F2937;
+            --gray:        #6B7280;
+            --white:       #FFFFFF;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3 { font-family: 'Exo 2', sans-serif; font-weight: 700; margin: 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #E3F2FF 0%, var(--bg) 100%);
+        }
+        .logo { max-width: 380px; width: 90%; height: auto; margin-bottom: 20px; }
+        .tagline { font-size: 2.2rem; color: var(--blue); margin: 10px 0 30px; }
+        .btn {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: var(--teal); }
+
+        /* Services */
+        .services { padding: 80px 0; background: var(--white); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: var(--white);
+            padding: 40px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,123,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,123,255,0.15); }
+        .card svg { width: 64px; height: 64px; fill: var(--teal); margin-bottom: 20px; }
+        .card h3 { color: var(--blue); margin-bottom: 12px; }
+
+        /* Why Us */
+        .why { padding: 100px 0; text-align: center; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 40px; }
+        .why-item svg { width: 48px; height: 48px; fill: var(--teal); margin-bottom: 16px; }
+
+        /* CTA */
+        .cta { padding: 100px 20px; text-align: center; background: var(--blue); color: white; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta .btn { background: var(--teal); }
+        .cta .btn:hover { background: #0d9488; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; background: #111; color: #888; }
+        footer img { max-width: 200px; margin-bottom: 16px; }
+
+        @media (max-width: 640px) {
+            .tagline { font-size: 1.8rem; }
+            .hero { padding: 60px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <img src="https://i.imgur.com/9bFZeYp.png" alt="Blue Droid Technologies Logo" class="logo">
+            <h1 class="tagline">Support Made Simple</h1>
+            <a href="tel:YOUR-PHONE-NUMBER" class="btn">Call or Text • (513) 555-1234</a>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2 style="text-align:center; color:var(--blue); font-size:2.5rem;">Services</h2>
+            <div class="grid">
+                <div class="card"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9 13H7v-2h4v2zm6 0h-4v-2h4v2zm-6-4H7v-2h4v2zm6 0h-4v-2h4v2zm-6-4H7V7h4v2zm6 0h-4V7h4v2z"/></svg><h3>Computer Repair</h3><p>Fast fixes for Windows & Mac</p></div>
+
+                <div class="card><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg><h3>WiFi & Networking</h3><p>Dead zones gone, speed restored</p></div>
+
+                <div class="card"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 6h16v2H4zm0 6h10v2H4z"/></svg><h3>Smart Home Setup</h3><p>Thermostats, cameras, lights – all talking nicely</p></div>
+
+                <div class="card"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><h3>Virus & Malware Removal</h3><p>Clean, fast, no data loss</p></div>
+
+                <div class="card"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg><h3>Data Backup & Recovery</h3><p>Keep your memories safe</p></div>
+
+                <div class="card"><svg viewBox="0 0 24 24"><path d="M19 7v10H5V7h14m1-12H4c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1z"/></svg><h3>Electronics Recycling</h3><p>Responsible, local, free pickup</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="container">
+            <h2 style="color:var(--blue);font-size:2.5rem;">Why Locals Choose Blue Droid</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7l8.59-8.59L18 7l-8 8z"/></svg>
+                    <h3>20+ Years Experience</h3>
+                </div>
+                <div class="why-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7-7 1.41 1.41L10 17z"/></svg>
+                    <h3>Same-Day & Remote Help</h3>
+                </div>
+                <div class="why-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7-7 1.41 1.41L10 17z"/></svg>
+                    <h3>Honest Flat-Rate Pricing</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to get your tech working again?</h2>
+            <p style="font-size:1.4rem;margin:20px 0;">Call or text anytime — we answer fast.</p>
+            <a href="tel:YOUR-PHONE-NUMBER" class="btn">Call / Text (513) 555-1234</a>
+            <p style="margin-top:30px;">or email hello@bluedroidtech.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://i.imgur.com/9bFZeYp.png" alt="Blue Droid Logo">
+        <p>© 2025 Blue Droid Technologies • Milford, OH • Support Made Simple</p>
+    </footer>
+</body>
+</html>
