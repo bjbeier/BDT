@@ -481,7 +481,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Dark mode colors */
+/* ==================== DARK MODE – FINAL VERSION ==================== */
 html.dark {
     --primary-blue: #5B7FE8;
     --light-blue: #1a2b44;
@@ -495,7 +495,8 @@ html.dark {
 html.dark nav,
 html.dark .service-card,
 html.dark .contact-card,
-html.dark .blog-card {
+html.dark .blog-card,
+html.dark .theme-toggle button {
     background: #1e293b;
     border-color: #334155;
 }
@@ -509,27 +510,48 @@ html.dark footer {
     background: #0a0e17;
 }
 
-/* Optional: nicer toggle button look */
-.theme-toggle button {
-    background: none;
-    border: 2px solid currentColor;
+/* Toggle button styling */
+.theme-toggle {
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+#themeSwitch {
+    background: var(--soft-gray);
     color: var(--charcoal);
-    padding: 0.6rem 1.2rem;
+    border: 2px solid transparent;
+    padding: 0.7rem 1.5rem;
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
+    gap: 10px;
+    transition: all 0.3s ease;
 }
-
-html.dark .theme-toggle button { color: #e0e7ff; }
-
-.theme-toggle button:hover {
+#themeSwitch:hover {
     background: var(--primary-blue);
     color: white;
+    border-color: var(--primary-blue);
 }
+html.dark #themeSwitch {
+    background: #334155;
+    color: #e0e7ff;
+    border-color: transparent;
+}
+html.dark #themeSwitch:hover {
+    background: #5B7FE8E8;
+}
+
+/* Sun / Moon icons */
+#sunIcon, #moonIcon {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+html.dark #sunIcon   { display: inline; }
+html.dark #moonIcon  { display: none; }
+html:not(.dark) #sunIcon  { display: none; }
+html:not(.dark) #moonIcon { display: inline; }
     </style>
 </head>
 <body>
