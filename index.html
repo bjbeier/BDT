@@ -66,59 +66,64 @@
             color: var(--primary-blue);
         }
 
-/* Phone button in top-right – works on ALL screen sizes */
-.phone-btn {
-    background: var(--primary-blue);
-    color: var(--white) !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.25s ease;
-    white-space: nowrap;
-}
-
-.phone-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(65, 105, 225, 0.4);
-}
-
-/* Make it smaller + pill-shaped on tablets & phones */
-@media (max-width: 1024px) {
-    .phone-btn {
-        padding: 0.65rem 1.2rem;
-        font-size: 0.95rem;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .phone-btn {
-        padding: 0.55rem 1rem;
-        font-size: 0.9rem;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 480px) {
-    .phone-btn {
-        padding: 0.5rem 0.85rem;
-        font-size: 0.85rem;
-    }
-}
-
-/* Optional: hide the long text on very small screens */
-.phone-btn .full   { display: inline; }
-.phone-btn .short  { display: none; }
-
-@media (max-width: 380px) {
-    .phone-btn .full  { display: none; }
-    .phone-btn .short { display: inline; }
-    .phone-btn {
-        padding: 0.45rem 0.7rem;
-        font-size: 0.82rem;
-    }
-}
+        /* Phone button in top-right – works on ALL screen sizes */
+        .phone-btn {
+            background: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(65, 105, 225, 0.4);
+        }
+        
+        /* Make it smaller + pill-shaped on tablets & phones */
+        @media (max-width: 1024px) {
+            .phone-btn {
+                padding: 0.65rem 1.2rem;
+                font-size: 0.95rem;
+                border-radius: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .phone-btn {
+                padding: 0.55rem 1rem;
+                font-size: 0.9rem;
+                border-radius: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .phone-btn {
+                padding: 0.5rem 0.85rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Optional: hide the long text on very small screens */
+        .phone-btn .full   { display: inline; }
+        .phone-btn .short  { display: none; }
+        
+        /* Short label on ALL phones */
+        @media (max-width: 768px) {
+            .phone-btn .full  { display: none; }
+            .phone-btn .short { display: inline; }
+        }
+        
+        /* Optional: make it even tighter on very small screens */
+        @media (max-width: 480px) {
+            .phone-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.84rem;
+            }
+        }
 
         /* Mobile Menu Toggle */
         .menu-toggle {
@@ -501,7 +506,7 @@
             </ul>
             <a href="tel:5132126714" class="phone-btn">
                 <span class="full">Call or Text • (513) 212-6714</span>
-                <span class="short">Call or Text (513) 212-6714</span>
+                <span class="short">(513) 212-6714</span>
             </a>
         </div>
     </nav>
