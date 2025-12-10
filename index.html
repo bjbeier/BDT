@@ -35,6 +35,22 @@
             background: #0f172a;
             color: #e0e7ff;
         }
+
+        /* Fix footer text readability in dark mode */
+html.dark footer,
+html.dark .footer-section a,
+html.dark .footer-bottom p {
+    color: #cbd5e1 !important;   /* light gray-blue, very readable */
+}
+
+html.dark .footer-section h4 {
+    color: #93bbfc !important;   /* slightly softer blue for headings */
+}
+
+html.dark .footer-section a:hover {
+    opacity: 1;
+    color: #ffffff !important;
+}
         html.dark nav,
         html.dark .service-card,
         html.dark .contact-card,
