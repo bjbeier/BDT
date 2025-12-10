@@ -66,46 +66,37 @@
             color: var(--primary-blue);
         }
 
-        /* Phone button in top-right – works on ALL screen sizes */
-        .phone-btn {
-            background: var(--primary-blue);
-            color: var(--white) !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.25s ease;
-            white-space: nowrap;
-        }
-        
-        .phone-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(65, 105, 225, 0.4);
-        }
-        
-        /* Make it smaller + pill-shaped on tablets & phones */
-        @media (max-width: 1024px) {
-            .phone-btn {
-                padding: 0.65rem 1.2rem;
-                font-size: 0.95rem;
-                border-radius: 50px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .phone-btn {
-                padding: 0.55rem 1rem;
-                font-size: 0.9rem;
-                border-radius: 50px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .phone-btn {
-                padding: 0.5rem 0.85rem;
-                font-size: 0.85rem;
-            }
-        }
+/* Desktop & tablet = nice rounded square (your current look) */
+.phone-btn {
+    background: var(--primary-blue);
+    color: var(--white) !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;           /* ← keeps the rounded-square look on bigger screens */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Phones only = still rounded-square, just smaller */
+@media (max-width: 768px) {
+    .phone-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 8px !important;      /* ← forces rounded-square on phones too */
+    }
+    
+    .phone-btn .full  { display: none; }
+    .phone-btn .short { display: inline; }
+}
+
+@media (max-width: 480px) {
+    .phone-btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.85rem;
+        border-radius: 8px !important;    /* ← still rounded-square even on tiny screens */
+    }
+}
         
         /* Optional: hide the long text on very small screens */
         .phone-btn .full   { display: inline; }
