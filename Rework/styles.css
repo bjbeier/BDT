@@ -460,6 +460,14 @@ html:not(.dark) #moonIcon {
     font-size: 5rem;
 }
 
+.about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* adjust to taste */
+    object-fit: cover;
+    display: block;
+}
+
 /* ==================== CONTACT SECTION ==================== */
 .contact-section {
     background: var(--white);
