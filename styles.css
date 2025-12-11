@@ -213,7 +213,7 @@ nav {
 /* ==================== HERO SECTION ==================== */
 .hero {
     position: relative;
-    background-image: url('Images/blue-laptop.jpg');
+    background-image: url('images/blue-laptop.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -434,10 +434,14 @@ html:not(.dark) #moonIcon {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 3rem;
     align-items: center;
+}
+
+/* Let text take more space than the image on desktop (optional) */
+.about-text {
+    flex: 2;
 }
 
 .about-text h2 {
@@ -453,11 +457,38 @@ html:not(.dark) #moonIcon {
 }
 
 .about-image {
+    flex: 1;
     background: var(--light-blue);
     border-radius: 12px;
     padding: 3rem;
     text-align: center;
-    font-size: 5rem;
+    font-size: 0; /* removes leftover emoji spacing issues */
+}
+
+.about-photo {
+    max-width: 360px;       /* adjust to taste */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;         /* centers the image */
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Mobile layout – stack vertically, text then image */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: 2;           /* ensure image comes after text */
+        margin-top: 1.5rem; /* spacing under the text */
+    }
+
+    .about-text {
+        order: 1;
+    }
 }
 
 /* ==================== CONTACT SECTION ==================== */
@@ -841,47 +872,34 @@ footer {
     }
 }
 
-
-
-/* Added from Grok to center items */
-/* Center all text in Trust Indicators and Service Cards */
 .trust-item h3,
 .trust-item p,
 .service-card h3,
-.service-card p {
-    text-align: center !important;
-}
-
-/* Center the two big section headings */
-.section-title,           /* "How Can I Help You?" */
-#contact .section-title { /* "Get In Touch" */
-    text-align: center !important;
-}
-
-/* Center the subtitles under those headings */
+.service-card p,
+.section-title,
 .section-subtitle {
-    text-align: center !important;
+    text-align: center;
+}
+
+.section-subtitle {
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;   /* optional – keeps long lines readable */
+    max-width: 800px;
 }
+/* Tablet (iPad) – show only the short version of the phone number */
 
-/* Tablet size (iPad, etc.) – show only the number in the nav call button */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .phone-btn .full,
-    .phone-btn .short {
+
+    .phone-btn .full {
+
         display: none;
+
     }
-    
-    .phone-btn::after {
-        content: "(513) 212-6714";
-        display: block;
-        font-weight: 600;
-        white-space: nowrap;
+
+    .phone-btn .short {
+
+        display: inline;
+
     }
-    
-    .phone-btn {
-        padding: 0.75rem 1.2rem !important;
-        font-size: 1rem;
-    }
+
 }
