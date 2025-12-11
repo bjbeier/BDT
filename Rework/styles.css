@@ -495,6 +495,10 @@ html:not(.dark) #moonIcon {
     color: var(--primary-blue);
 }
 
+.contact-card p {
+    text-align: center;
+}
+
 /* ==================== FOOTER ==================== */
 footer {
     background: var(--charcoal);
