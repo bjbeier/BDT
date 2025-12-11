@@ -457,17 +457,17 @@ html:not(.dark) #moonIcon {
     border-radius: 12px;
     padding: 3rem;
     text-align: center;
-    font-size: 5rem;
+    font-size: 0; /* removes leftover emoji spacing issues */
 }
 
 .about-photo {
-    max-width: 300px;
+    max-width: 300px;   /* controls size */
     width: 100%;
     height: auto;
-    border-radius: 12px; /* adjust to taste */
-    object-fit: cover;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto;     /* centers the image */
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 /* ==================== CONTACT SECTION ==================== */
