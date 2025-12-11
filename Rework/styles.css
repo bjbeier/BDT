@@ -855,3 +855,20 @@ footer {
     margin-right: auto;
     max-width: 800px;
 }
+/* Tablet (iPad) – show only the short version of the phone number */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .phone-btn .full {
+
+        display: none;
+
+    }
+
+    .phone-btn .short {
+
+        display: inline;
+
+    }
+
+}
