@@ -409,6 +409,7 @@ html:not(.dark) #moonIcon {
 }
 
 .service-icon {
+    font-size: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
