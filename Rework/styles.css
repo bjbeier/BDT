@@ -470,6 +470,27 @@ html:not(.dark) #moonIcon {
     object-fit: cover;
 }
 
+/* Desktop layout remains as-is */
+.about-content {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Mobile layout — stack vertically and move image *after* text */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    .about-image {
+        order: 2;
+    }
+}
+
 /* ==================== CONTACT SECTION ==================== */
 .contact-section {
     background: var(--white);
