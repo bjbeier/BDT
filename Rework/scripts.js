@@ -24,7 +24,7 @@ function renderSharedLayout() {
         header.innerHTML = `
             <nav>
                 <div class="nav-container">
-                    <img src="images/transparent-logo.png"
+                    <img src="images/logo.png"
                          alt="Blue Droid Technologies"
                          class="logo">
                     <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation">☰</button>
