@@ -44,6 +44,84 @@ if (themeSwitch) {
     });
 }
 
+// ==================== ELEGANT PARTICLE MOTION FOR HERO ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
+
+    // Create canvas for particles
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '2';
+    canvas.style.pointerEvents = 'none';
+    heroSection.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+
+    function setCanvasDimensions() {
+        canvas.width = heroSection.offsetWidth;
+        canvas.height = heroSection.offsetHeight;
+    }
+    setCanvasDimensions();
+    window.addEventListener('resize', setCanvasDimensions);
+
+    // Particle class
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 0.3 - 0.15;
+            this.speedY = Math.random() * 0.3 - 0.15;
+            this.opacity = Math.random() * 0.5 + 0.1;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+        }
+    }
+
+    // Create particles
+    const particlesArray = [];
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
+        particlesArray.push(new Particle());
+    }
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+        }
+    }
+    animate();
+});
+
 // ==================== NEWSLETTER FORM (if present) ====================
 function handleNewsletter(event) {
     event.preventDefault();
