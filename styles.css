@@ -409,8 +409,11 @@ html:not(.dark) #moonIcon {
 }
 
 .service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;   /* keeps nice spacing below the icon */
 }
 
 .service-card h3 {
