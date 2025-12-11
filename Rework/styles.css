@@ -461,11 +461,11 @@ html:not(.dark) #moonIcon {
 }
 
 .about-photo {
-    max-width: 300px;   /* controls size */
+    max-width: 360px;   /* was 300px – adjust to taste */
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;     /* centers the image */
+    margin: 0 auto;     /* keeps it centered */
     border-radius: 12px;
     object-fit: cover;
 }
@@ -476,19 +476,11 @@ html:not(.dark) #moonIcon {
     gap: 2rem;
 }
 
-/* Mobile layout — stack vertically and move image *after* text */
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-
-    .about-text {
-        order: 1;
-    }
-
-    .about-image {
-        order: 2;
-    }
+    /* just delete the .about-image { order: -1; } rule */
 }
 
 /* ==================== CONTACT SECTION ==================== */
