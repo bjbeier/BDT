@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Blue Droid Technologies</title>
+    <meta name="description" content="Tech tips, insights, and local news from Blue Droid Technologies. Stay informed on cybersecurity, computer repair, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+    <!-- Shared Navigation (rendered via scripts.js) -->
+    <header id="site-header"></header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <button id="themeSwitch" aria-label="Toggle dark mode" class="hero-toggle">
+            <!-- SVG icons are handled by scripts.js -->
+            <svg id="sunIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 4.22l1.42 1.42"></path>
+            </svg>
+            <svg id="moonIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        <div class="container">
+            <h1>The Blue Droid Tech Blog</h1>
+            <p class="section-subtitle">Insights and tips to keep your technology running smoothly.</p>
+        </div>
+    </section>
+
+    <!-- Main Blog Content Section -->
+    <section class="blog-section">
+        <div class="container blog-layout">
+            
+            <!-- Left Column: Post List -->
+            <main class="blog-main">
+                <div id="post-list" class="post-list">
+                    <!-- Posts will be generated here by scripts.js -->
+                </div>
+            </main>
+
+            <!-- Right Column: Sidebar (Timeline & Tags) -->
+            <aside class="blog-sidebar">
+                
+                <!-- Tag Filter -->
+                <div class="sidebar-card">
+                    <h3>Categories & Tags</h3>
+                    <div id="tag-container" class="tag-container">
+                        <!-- Tags will be generated here by scripts.js -->
+                    </div>
+                </div>
+
+                <!-- Timeline / Archive -->
+                <div class="sidebar-card">
+                    <h3>Archive</h3>
+                    <ul id="timeline-list" class="timeline-list">
+                        <!-- Timeline months will be generated here by scripts.js -->
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </section>
+
+    <!-- Shared Footer (rendered via scripts.js) -->
+    <footer id="site-footer"></footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
