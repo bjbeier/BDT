@@ -7,7 +7,7 @@
     <meta name="description" content="Transparent pricing for tech support in Milford, OH. Flat rates from $3 for secure wipes to $250 for tutorials. All prices include tax.">
     
     <!-- Security Headers (Meta Tags - Server-side headers recommended) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
@@ -17,12 +17,7 @@
     <!-- Google tag (gtag.js) - Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-353553686" 
             crossorigin="anonymous"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-353553686');
-    </script>
+    <script src="analytics.js" defer></script>
 </head>
 <body>
 
@@ -90,7 +85,7 @@
 
             </div>
 
-            <p style="text-align:center; margin-top: 3rem; font-size: 1.1rem; color: var(--charcoal); opacity: 0.9;">
+            <p class="pricing-disclaimer">
                 Any service not listed above is billed at the standard <strong>$125/hour</strong> rate.
             </p>
         </div>

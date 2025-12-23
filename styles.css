@@ -903,3 +903,11 @@ footer {
     }
 
 }
+/* ==================== SECURITY REFACTOR ==================== */
+.pricing-disclaimer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    opacity: 0.9;
+}

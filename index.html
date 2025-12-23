@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Droid Technologies | Support Made Simple</title>
-    <meta name="description" content="Local Milford tech support for residential and small business. Over 20 years experience. Personal, patient service.">
-    
+    <meta name="description"
+        content="Local Milford tech support for residential and small business. Over 20 years experience. Personal, patient service.">
+
     <!-- Security Headers (Meta Tags - Server-side headers recommended) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
+
     <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-353553686" 
-            crossorigin="anonymous"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-353553686');
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-353553686" crossorigin="anonymous"></script>
+    <script src="analytics.js" defer></script>
 </head>
+
 <body>
     <!-- Shared Navigation (rendered via scripts.js) -->
     <header id="site-header"></header>
@@ -32,11 +30,15 @@
     <section class="hero">
         <!-- Dark/Light Mode Toggle -->
         <button id="themeSwitch" aria-label="Toggle dark mode" class="hero-toggle">
-            <svg id="sunIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg id="sunIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <circle cx="12" cy="12" r="5"></circle>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                <path
+                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                </path>
             </svg>
-            <svg id="moonIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg id="moonIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
         </button>
@@ -70,7 +72,8 @@
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title">How Can I Help You?</h2>
-            <p class="section-subtitle">Whether you're at home or running a business, I'm here to make technology work for you</p>
+            <p class="section-subtitle">Whether you're at home or running a business, I'm here to make technology work
+                for you</p>
 
             <!-- Residential Services -->
             <div class="service-category">
@@ -81,7 +84,6 @@
                         <h3>PC &amp; Laptop Repair</h3>
                         <p>Computer running slow or acting up? I'll get it back to peak performance.</p>
                     </div>
-
                     <div class="service-card">
                         <div class="service-icon">&#x1F4F6;</div>
                         <h3>WiFi Setup</h3>
@@ -145,10 +147,16 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Blue Droid Technologies</h2>
-                    <p>Hi, I'm your local tech expert here in Milford, OH. With over 20 years of experience in technology support, I started Blue Droid Technologies to provide the kind of personal, patient service that's missing from big box stores.</p>
-                    <p>I believe technology should make your life easier, not more complicated. Whether you need help with a simple question or a complex setup, I'm here to help&mdash;in plain English, without the jargon.</p>
-                    <p>When you work with me, you're supporting a local business and getting someone who genuinely cares about solving your problem. No upselling, no pressure&mdash;just honest, reliable service.</p>
-                    <p><strong>First responders, veterans, and teachers:</strong> Ask me about special discounts. Thank you for your service!</p>
+                    <p>Hi, I'm your local tech expert here in Milford, OH. With over 20 years of experience in
+                        technology support, I started Blue Droid Technologies to provide the kind of personal, patient
+                        service that's missing from big box stores.</p>
+                    <p>I believe technology should make your life easier, not more complicated. Whether you need help
+                        with a simple question or a complex setup, I'm here to help&mdash;in plain English, without the
+                        jargon.</p>
+                    <p>When you work with me, you're supporting a local business and getting someone who genuinely cares
+                        about solving your problem. No upselling, no pressure&mdash;just honest, reliable service.</p>
+                    <p><strong>First responders, veterans, and teachers:</strong> Ask me about special discounts. Thank
+                        you for your service!</p>
                 </div>
                 <div class="about-image">
                     <img src="images/bjbeier.jpg" alt="BJ Beier" class="about-photo">
@@ -162,7 +170,7 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Ready to get started? I'm just a phone call, text message or email away.</p>
-            
+
             <div class="contact-methods">
                 <div class="contact-card">
                     <h3>&#x1F4DE; Call or Text</h3>
@@ -171,13 +179,15 @@
                 <div class="contact-card">
                     <h3>&#x1F4E7; Email</h3>
                     <!-- Email obfuscated via JavaScript -->
-                    <a href="#" id="emailLink" data-user="contact" data-domain="bluedroidtech.com">Click to reveal email</a>
+                    <a href="#" id="emailLink" data-user="contact" data-domain="bluedroidtech.com">Click to reveal
+                        email</a>
                 </div>
                 <div class="contact-card">
                     <h3>&#x1F4AC; Facebook Messenger</h3>
                     <a href="https://m.me/bluedroidtech" target="_blank" rel="noopener">Message Now</a>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -186,4 +196,5 @@
 
     <script src="scripts.js" defer></script>
 </body>
+
 </html>
