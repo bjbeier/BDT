@@ -102,11 +102,11 @@ html.dark .trust-item p {
 
 html.dark .hero-toggle {
     color: #e0e7ff;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25);
 }
 
 html.dark .hero-toggle:hover {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 html.dark .coming-soon {
@@ -140,7 +140,7 @@ html.dark .page-hero {
 /* ==================== NAVIGATION ==================== */
 nav {
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -244,7 +244,7 @@ nav {
     pointer-events: none;
 }
 
-.hero > * {
+.hero>* {
     position: relative;
     z-index: 3;
 }
@@ -275,14 +275,14 @@ nav {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(255, 255, 255, 0.25);
     color: white;
     border: none;
     width: 52px;
@@ -298,11 +298,12 @@ nav {
 }
 
 .hero-toggle:hover {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
 }
 
-#sunIcon, #moonIcon {
+#sunIcon,
+#moonIcon {
     position: absolute;
     transition: opacity 0.3s;
 }
@@ -396,15 +397,16 @@ html:not(.dark) #moonIcon {
 
 .service-card {
     background: var(--white);
-    border: 2px solid var(--soft-gray);
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 2rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-blue);
 }
 
@@ -415,7 +417,8 @@ html:not(.dark) #moonIcon {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1;                      /* prevents any vertical shrinking */
+    line-height: 1;
+    /* prevents any vertical shrinking */
 }
 
 .service-card h3 {
@@ -462,15 +465,18 @@ html:not(.dark) #moonIcon {
     border-radius: 12px;
     padding: 3rem;
     text-align: center;
-    font-size: 0; /* removes leftover emoji spacing issues */
+    font-size: 0;
+    /* removes leftover emoji spacing issues */
 }
 
 .about-photo {
-    max-width: 360px;       /* adjust to taste */
+    max-width: 360px;
+    /* adjust to taste */
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;         /* centers the image */
+    margin: 0 auto;
+    /* centers the image */
     border-radius: 12px;
     object-fit: cover;
 }
@@ -482,8 +488,10 @@ html:not(.dark) #moonIcon {
     }
 
     .about-image {
-        order: 2;           /* ensure image comes after text */
-        margin-top: 1.5rem; /* spacing under the text */
+        order: 2;
+        /* ensure image comes after text */
+        margin-top: 1.5rem;
+        /* spacing under the text */
     }
 
     .about-text {
@@ -505,9 +513,12 @@ html:not(.dark) #moonIcon {
 }
 
 .contact-card {
-    background: var(--soft-gray);
+    background: var(--white);
+    border: 1px solid #e5e7eb;
     padding: 2rem;
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card h3 {
@@ -565,7 +576,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0.7;
 }
 
@@ -596,16 +607,17 @@ footer {
 
 .blog-card {
     background: var(--white);
-    border: 2px solid var(--soft-gray);
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
 }
 
 .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-blue);
 }
 
@@ -760,6 +772,7 @@ footer {
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 768px) {
+
     /* Navigation */
     .menu-toggle {
         display: block;
@@ -774,7 +787,7 @@ footer {
         background: var(--white);
         flex-direction: column;
         padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
@@ -886,6 +899,7 @@ footer {
     margin-right: auto;
     max-width: 800px;
 }
+
 /* Tablet (iPad) – show only the short version of the phone number */
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -903,6 +917,7 @@ footer {
     }
 
 }
+
 /* ==================== SECURITY REFACTOR ==================== */
 .pricing-disclaimer {
     text-align: center;
