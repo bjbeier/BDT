@@ -255,8 +255,8 @@ nav {
 }
 
 .hero-toggle {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 105px;
     right: 20px;
     background: rgba(255, 255, 255, 0.25);
     color: white;
@@ -270,7 +270,31 @@ nav {
     justify-content: center;
     backdrop-filter: blur(8px);
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 900;
+}
+
+/* Floating Toggle - Scrolled State */
+.hero-toggle.toggle-scrolled {
+    background: var(--white);
+    color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb;
+}
+
+html.dark .hero-toggle.toggle-scrolled {
+    background: #FFFFFF;
+    color: var(--primary-blue);
+    border-color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+html:not(.dark) .hero-toggle.toggle-scrolled #sunIcon {
+    opacity: 0;
+}
+
+html:not(.dark) .hero-toggle.toggle-scrolled #moonIcon {
+    opacity: 1;
+    color: var(--primary-blue);
 }
 
 .hero-toggle:hover {
@@ -633,7 +657,7 @@ footer {
     }
 
     .hero-toggle {
-        top: 16px;
+        top: 90px;
         right: 16px;
         width: 48px;
         height: 48px;

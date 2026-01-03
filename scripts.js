@@ -673,6 +673,33 @@ function handleNewsletter(event) {
 
 
 
+// ==================== FLOATING TOGGLE SCROLL HANDLER ====================
+function initFloatingToggle() {
+    const toggle = document.getElementById('themeSwitch');
+    const hero = document.querySelector('.hero') || document.querySelector('.hero-condensed');
+
+    if (!toggle || !hero) return;
+
+    window.addEventListener('scroll', () => {
+        // Calculate trigger point: when hero bottom passes the button
+        // Simple logic: if scrolled past 100px.
+        // Or if scrolled past hero height relative to viewport.
+        // Button is fixed at ~105px from top.
+        // If hero bottom is < 105px relative to viewport, then button is over content.
+
+        const rect = hero.getBoundingClientRect();
+        const buttonTop = 105; // Approximate fixed top
+
+        // rect.bottom is the distance from viewport top to bottom of hero.
+        // If rect.bottom < buttonTop, we are past hero.
+        if (rect.bottom < buttonTop + 50) { // +50 buffer
+            toggle.classList.add('toggle-scrolled');
+        } else {
+            toggle.classList.remove('toggle-scrolled');
+        }
+    });
+}
+
 // ==================== MAIN INIT ====================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -682,7 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNav();
 
     initThemeSwitch();
-
+    initFloatingToggle();
     initSmoothScroll();
 
     initHeroParticles();
