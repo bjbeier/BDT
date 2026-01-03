@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /CMS/
+
+Sitemap: https://bluedroidtech.com/sitemap.xml
