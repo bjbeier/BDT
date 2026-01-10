@@ -700,6 +700,33 @@ function initFloatingToggle() {
     });
 }
 
+// ==================== SCROLL REVEAL ANIMATION ====================
+
+let revealObserver;
+function initScrollReveal() {
+    if (!revealObserver) {
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing this specific element
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15
+        });
+    }
+
+    document.querySelectorAll('.reveal:not(.active)').forEach(element => {
+        revealObserver.observe(element);
+    });
+}
+
+
+
 // ==================== MAIN INIT ====================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -715,5 +742,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroParticles();
 
     initEmailReveal(); // Security Fix: Initialize email obfuscation
+    initScrollReveal();
 
 });

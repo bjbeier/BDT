@@ -34,7 +34,7 @@ async function loadPosts(containerId) {
     const html = posts.map(post => {
         const tagsHtml = (post.tags || []).map(t => `#${t}`).join(' ');
         return `
-        <article class="blog-card">
+        <article class="blog-card reveal">
             ${post.image ? `<div class="blog-card-image"><img src="${post.image}" alt="${post.title}"></div>` : ''}
             <div class="blog-card-content">
                 <header>
@@ -56,6 +56,9 @@ async function loadPosts(containerId) {
     }).join('');
 
     container.innerHTML = html;
+    if (typeof initScrollReveal === 'function') {
+        initScrollReveal();
+    }
 }
 
 async function loadSinglePost(containerId) {
@@ -84,20 +87,23 @@ async function loadSinglePost(containerId) {
     const tagsHtml = (post.tags || []).map(t => `#${t}`).join(' ');
 
     container.innerHTML = `
-        <article class="blog-post-content">
-            <header class="blog-post-header">
+        <article class="blog-post-content reveal">
+            <header class="blog-post-header reveal">
                 <div class="blog-meta">${formatDate(post.date)} | <span class="blog-tags">${tagsHtml}</span></div>
                 <h1 class="post-title">${post.title}</h1>
-                ${post.image ? `<img src="${post.image}" alt="${post.title}" class="post-featured-image">` : ''}
+                ${post.image ? `<img src="${post.image}" alt="${post.title}" class="post-featured-image reveal">` : ''}
             </header>
-            <div class="post-body">
+            <div class="post-body reveal">
                 ${post.content}
             </div>
-            <div class="post-footer">
+            <div class="post-footer reveal">
                 <a href="blog.html" class="cta-button">Back to All Posts</a>
             </div>
         </article>
     `;
+    if (typeof initScrollReveal === 'function') {
+        initScrollReveal();
+    }
 }
 
 function formatDate(dateString) {
