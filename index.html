@@ -10,7 +10,7 @@
 
     <!-- Security Headers (Meta Tags - Server-side headers recommended) -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;">
+        content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self'; img-src 'self' data: https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
@@ -18,8 +18,14 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-353553686" crossorigin="anonymous"></script>
-    <script src="analytics.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-353553686"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-353553686');
+    </script>
 </head>
 
 <body>
@@ -82,20 +88,15 @@
             <div class="service-category">
                 <h3 class="category-title">Residential Services</h3>
                 <div class="service-grid">
-                    <div class="service-card reveal">
-                        <div class="service-icon">&#x1F4BB;</div>
-                        <h3>PC &amp; Laptop Repair</h3>
-                        <p>Computer running slow or acting up? I'll get it back to peak performance.</p>
-                    </div>
-                    <div class="service-card reveal">
+                    <div class="service-card reveal" id="wifi">
                         <div class="service-icon">&#x1F4F6;</div>
-                        <h3>WiFi Setup</h3>
+                        <h3>WiFi Dead Zones &amp; Setup</h3>
                         <p>Upgrading or expanding your WiFi? I'll ensure full coverage throughout your home.</p>
                     </div>
                     <div class="service-card reveal">
-                        <div class="service-icon">&#x1F3E1;</div>
-                        <h3>Smart Home Setup</h3>
-                        <p>Need help with smart speakers, displays, or home automation? I've got you covered.</p>
+                        <div class="service-icon">&#x267B;&#xFE0F;</div>
+                        <h3>Electronics Recycling</h3>
+                        <p>Responsibly dispose of old equipment with secure data wiping or destruction.</p>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">&#x1F4F1;</div>
@@ -103,14 +104,19 @@
                         <p>New device setup, data migration, or just learning the features&mdash;I can help.</p>
                     </div>
                     <div class="service-card reveal">
+                        <div class="service-icon">&#x1F3E1;</div>
+                        <h3>Smart Home Setup</h3>
+                        <p>Need help with smart speakers, displays, or home automation? I've got you covered.</p>
+                    </div>
+                    <div class="service-card reveal">
                         <div class="service-icon">&#x1F5A5;&#xFE0F;</div>
                         <h3>Home Office Setup</h3>
                         <p>Working from home? Let me help you create a productive, organized workspace.</p>
                     </div>
                     <div class="service-card reveal">
-                        <div class="service-icon">&#x267B;&#xFE0F;</div>
-                        <h3>Electronics Recycling</h3>
-                        <p>Responsibly dispose of old equipment with secure data wiping or destruction.</p>
+                        <div class="service-icon">&#x1F4BB;</div>
+                        <h3>PC &amp; Laptop Repair</h3>
+                        <p>Computer running slow or acting up? I'll get it back to peak performance.</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +132,7 @@
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">&#x1F310;</div>
-                        <h3>Network Setup &amp; Management</h3>
+                        <h3>Network &amp; Mesh Installation</h3>
                         <p>Reliable network infrastructure tailored to your business needs.</p>
                     </div>
                     <div class="service-card reveal">
