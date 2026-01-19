@@ -67,8 +67,8 @@
 
         banner.innerHTML = `
             <div>
-                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 700;">I value your privacy</h3>
-                <p style="margin: 0; font-size: 0.875rem; line-height: 1.5;">
+                <h3>I value your privacy</h3>
+                <p>
                     I use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to my use of tracking scripts.
                 </p>
             </div>
