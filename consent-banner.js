@@ -65,18 +65,38 @@
             }
         }
 
-        banner.innerHTML = `
-            <div>
-                <h3>I value your privacy</h3>
-                <p>
-                    I use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to my use of tracking scripts.
-                </p>
-            </div>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <button id="consent-deny" class="consent-btn btn-deny">Decline</button>
-                <button id="consent-accept" class="consent-btn btn-accept">Accept</button>
-            </div>
-        `;
+        const contentDiv = document.createElement('div');
+        
+        const heading = document.createElement('h3');
+        heading.textContent = 'I value your privacy';
+        
+        const paragraph = document.createElement('p');
+        paragraph.textContent = 'I use cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to my use of tracking scripts.';
+        
+        contentDiv.appendChild(heading);
+        contentDiv.appendChild(paragraph);
+
+        const btnContainer = document.createElement('div');
+        // Use direct property assignment to bypass CSP restrictions on inline styles
+        btnContainer.style.display = 'flex';
+        btnContainer.style.gap = '1rem';
+        btnContainer.style.justifyContent = 'center';
+
+        const denyBtn = document.createElement('button');
+        denyBtn.id = 'consent-deny';
+        denyBtn.className = 'consent-btn btn-deny';
+        denyBtn.textContent = 'Decline';
+
+        const acceptBtn = document.createElement('button');
+        acceptBtn.id = 'consent-accept';
+        acceptBtn.className = 'consent-btn btn-accept';
+        acceptBtn.textContent = 'Accept';
+
+        btnContainer.appendChild(denyBtn);
+        btnContainer.appendChild(acceptBtn);
+
+        banner.appendChild(contentDiv);
+        banner.appendChild(btnContainer);
 
         document.body.appendChild(banner);
         updateBannerStyles();
